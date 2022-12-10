@@ -1,6 +1,6 @@
 export default function SearchBar({ handleSearch }: { handleSearch: any }) {
 	return (
-		<div className="w-full bg-white shadow mt-8">
+		<div className="w-full bg-white dark:bg-gray-800 shadow mt-8">
 			<label
 				htmlFor="default-search"
 				className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"

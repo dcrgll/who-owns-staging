@@ -5,11 +5,14 @@ import { getCookie } from 'utils/cookies'
 export default function UpdateProjectForm({ setEmail }: { setEmail: any }) {
 	return (
 		<div className="px-4 py-4 sm:px-6">
-			<h2 className="text-lg leading-6 font-bold text-gray-900">
+			<h2 className="text-lg leading-6 font-bold text-gray-900 dark:text-white">
 				Update Project
 			</h2>
 
-			<p className="mt-2 text-xs text-gray-500" id="name-description">
+			<p
+				className="mt-2 text-xs text-gray-500 dark:text-gray-50"
+				id="name-description"
+			>
 				Enter your name, and then claim the project.
 			</p>
 
