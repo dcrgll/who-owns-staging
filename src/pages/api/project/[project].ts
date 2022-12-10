@@ -12,8 +12,12 @@ export default async function handler(
 			.eq('name', req.query.project)
 
 		if (!error) {
-			if (data[0].owner) res.status(200).json(data[0])
-			else res.status(404).json({ error: 'Project is claimed on staging' })
+			if (!data[0].owner)
+				res.status(200).json({ message: 'Staging is available' })
+			else
+				res
+					.status(401)
+					.json({ error: 'Project is claimed on staging', data: data[0] })
 		} else {
 			res.status(500).json(error)
 		}
