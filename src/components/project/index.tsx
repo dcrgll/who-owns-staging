@@ -32,12 +32,12 @@ export default function Project(props: { project: any; email: string }) {
 	return (
 		<li key={props.project.id}>
 			<div
-				className={`px-4 py-4 sm:px-6 ${
+				className={`px-4 py-4 sm:px-6 dark:bg-gray-800 dark:border-gray-00 ${
 					isCurrentUserOwner() ? 'bg-gray-50' : ''
 				}`}
 			>
 				<div className="flex items-center justify-between">
-					<p className="text-sm font-medium text-indigo-600 truncate">
+					<p className="text-sm font-medium text-indigo-600 dark:text-indigo-100 truncate">
 						{props.project.name}
 					</p>
 					<div className="ml-2 flex-shrink-0 flex">
@@ -55,7 +55,7 @@ export default function Project(props: { project: any; email: string }) {
 				<div className="mt-2 sm:flex sm:justify-between">
 					<div className="sm:flex">
 						{shouldRenderUser(props) ? (
-							<p className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
+							<p className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 dark:text-white">
 								<UserIcon
 									className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
 									aria-hidden="true"
@@ -67,7 +67,7 @@ export default function Project(props: { project: any; email: string }) {
 						)}
 					</div>
 
-					<div className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
+					<div className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 dark:text-white">
 						<CalendarIcon
 							className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
 							aria-hidden="true"

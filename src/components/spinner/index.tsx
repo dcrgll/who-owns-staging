@@ -1,7 +1,6 @@
-import PropTypes from 'prop-types'
 export default function Spinner() {
 	return (
-		<div className="h-screen w-screen bg-white flex justify-center items-center absolute z-10 overflow-hidden">
+		<div className="h-screen w-screen bg-white dark:bg-gray-800 flex justify-center items-center absolute z-10 overflow-hidden dark:text-white">
 			<svg
 				className="animate-spin -ml-1 mr-3 h-5 w-"
 				xmlns="http://www.w3.org/2000/svg"
@@ -25,5 +24,3 @@ export default function Spinner() {
 		</div>
 	)
 }
-
-Spinner.propTypes = {}

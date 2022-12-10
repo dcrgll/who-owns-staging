@@ -34,14 +34,20 @@ export default function CreateProjectForm(props: any) {
 	}
 
 	return (
-		<div className="transform hover:scale-[1.01] transition-all rounded-xl w-full md:w-1/3 bg-gradient-to-r p-1 from-[#DCFCE7] via-[#FCA5A5] to-[#FECACA]">
-			<div className="bg-white shadow overflow-hidden sm:rounded-md">
+		<div
+			className="transform hover:scale-[1.01] transition-all rounded-xl w-full md:w-1/3 bg-gradient-to-r from-[#DCFCE7] via-[#FCA5A5] to-[#FECACA]"
+			style={{ padding: '6px' }}
+		>
+			<div className="bg-white dark:bg-gray-800 shadow overflow-hidden sm:rounded-md">
 				<div className="px-4 py-4 sm:px-6">
-					<h2 className="text-lg leading-6 font-bold text-gray-900">
+					<h2 className="text-lg leading-6 font-bold text-gray-900 dark:text-white">
 						Create Project
 					</h2>
 
-					<p className="mt-2 text-xs text-gray-500" id="name-description">
+					<p
+						className="mt-2 text-xs text-gray-500 dark:text-gray-50"
+						id="name-description"
+					>
 						Enter a project name and then submit!
 					</p>
 					<div className="mt-4">
@@ -68,7 +74,10 @@ export default function CreateProjectForm(props: any) {
 							/>
 						</div>
 						<div className="ml-3 text-sm">
-							<label htmlFor="claim" className="font-medium text-gray-700">
+							<label
+								htmlFor="claim"
+								className="font-medium text-gray-700 dark:text-gray-50"
+							>
 								Also claim this project
 							</label>
 							{/* <p id="claim-description" className="text-gray-500">

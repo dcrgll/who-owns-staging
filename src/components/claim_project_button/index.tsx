@@ -35,7 +35,7 @@ export default function ClaimProjectButton(props: {
 text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 ${
 				props.email
 					? 'bg-green-100 hover:bg-green-400 text-green-800'
-					: 'bg-gray-300'
+					: 'bg-gray-300 dark:bg-gray-500'
 			}`}
 			disabled={!props.email}
 			onClick={onClick}
