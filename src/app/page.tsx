@@ -9,6 +9,8 @@ import Spinner from 'components/spinner'
 import SearchBar from 'components/search_bar'
 import Footer from 'components/footer'
 import Header from 'components/header'
+import { getCookie } from 'utils/cookies'
+import _ from 'lodash'
 
 export default function Page(): JSX.Element {
 	const [email, setEmail] = useState('')
@@ -16,7 +18,12 @@ export default function Page(): JSX.Element {
 	const [results, setResults] = useState([])
 
 	useEffect(() => {
-		setResults(data)
+		setEmail(getCookie('SB_WS_NAME'))
+	}, [])
+
+	useEffect(() => {
+		const sortedArray: any = _.orderBy(data, ['name'], ['asc'])
+		setResults(sortedArray)
 	}, [data])
 
 	const handleSearch = (search: string) => {
@@ -24,7 +31,8 @@ export default function Page(): JSX.Element {
 			return project.name.toLowerCase().includes(search.toLowerCase())
 		})
 
-		setResults(filtered)
+		const sortedArray: any = _.orderBy(filtered, ['name'], ['asc'])
+		setResults(sortedArray)
 	}
 
 	if (error) return <div>failed to load</div>
