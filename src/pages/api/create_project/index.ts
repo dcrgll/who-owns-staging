@@ -10,7 +10,7 @@ export default async function handler(
 
 		const { error } = await supabase
 			.from('projects')
-			.insert({ name: body.name, owner: body.owner })
+			.insert({ name: body.name })
 
 		if (error) {
 			res.status(500).json(error)
