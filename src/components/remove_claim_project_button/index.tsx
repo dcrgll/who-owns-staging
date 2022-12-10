@@ -27,8 +27,8 @@ export default function RemoveClaimProjectButton(props: {
 		<button
 			type="button"
 			className={`inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm
-text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 ${
-				props.email ? 'bg-red-600 hover:bg-red-700' : 'bg-gray-300'
+text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-100 ${
+				props.email ? 'bg-red-100 text-red-800' : 'bg-gray-300'
 			}`}
 			disabled={!props.email}
 			onClick={onClick}
