@@ -1,15 +1,8 @@
 'use client'
 
 import Project from 'components/project'
-import useSWR from 'swr'
-import fetcher from 'utils/fetcher'
 
-export default function ProjectsList(props: { email: string }) {
-	const { data, error } = useSWR('/api/get_projects', fetcher)
-
-	if (error) return <div>failed to load</div>
-	if (!data) return <div>loading...</div>
-
+export default function ProjectsList(props: { email: string; projects: any }) {
 	// const positions = [
 	// 	{
 	// 		id: 1,
@@ -38,9 +31,9 @@ export default function ProjectsList(props: { email: string }) {
 	// ]
 
 	return (
-		<div className="bg-white shadow overflow-hidden sm:rounded-md w-full">
+		<div className="bg-white shadow sm:rounded-b-md w-full">
 			<ul role="list" className="divide-y divide-gray-200">
-				{data.map((project: any) => {
+				{props.projects?.map((project: any) => {
 					return (
 						<Project key={project.uuid} project={project} email={props.email} />
 					)

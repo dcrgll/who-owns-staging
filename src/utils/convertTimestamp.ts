@@ -1,5 +1,4 @@
 const convertTimestamp = (date: string) => {
-	console.log
 	const newDate = new Date(date)
 	const newDateSting = newDate.toString()
 	const newDateArray = newDateSting.split(' ')
