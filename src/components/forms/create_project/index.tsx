@@ -7,6 +7,15 @@ export default function CreateProjectForm(props: any) {
 	const [projectName, setProjectName] = useState('')
 	const [claimProject, setClaimProject] = useState(false)
 
+	const handleInput = (string: string) => {
+		const newString = string
+			.replace(/([a-z])([A-Z])/g, '$1-$2')
+			.replace(/[\s_]+/g, '-')
+			.toLowerCase()
+
+		setProjectName(newString)
+	}
+
 	const onSubmit = () => {
 		if (!projectName) return toast.error('Project name is required!')
 		if (claimProject && !props.email)
@@ -55,10 +64,11 @@ export default function CreateProjectForm(props: any) {
 							type="text"
 							name="name"
 							id="name"
+							value={projectName}
 							className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
 							placeholder="A Great Project"
 							aria-describedby="name-description"
-							onChange={e => setProjectName(e.target.value)}
+							onChange={e => handleInput(e.target.value)}
 						/>
 					</div>
 

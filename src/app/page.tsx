@@ -39,7 +39,7 @@ export default function Page(): JSX.Element {
 	if (!data) return <Spinner />
 
 	return (
-		<div className="h-screen w-screen flex  items-center flex-col px-8 sm:px-16 py-16">
+		<div className="h-screen w-screen flex items-center flex-col px-8 sm:px-16 py-16">
 			<Header />
 			<Forms email={email} setEmail={setEmail} />
 			<SearchBar handleSearch={handleSearch} />
